@@ -8,9 +8,9 @@
 
 namespace {
 
-void set_if(CLI::Option* option, auto& value) {
+template <typename T> void set_if(CLI::Option* option, T& value) {
     if (option->count() > 0) {
-        value = option->as<std::remove_reference_t<decltype(value)>>();
+        value = option->as<std::remove_reference_t<T>>();
     }
 }
 
