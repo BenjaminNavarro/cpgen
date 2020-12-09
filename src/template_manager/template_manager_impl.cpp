@@ -55,6 +55,9 @@ namespace cpgen {
 
 TemplateManager::pImpl::pImpl() {
     curl_global_init(CURL_GLOBAL_DEFAULT);
+    if (not std::filesystem::exists(templateRootPath())) {
+        update();
+    }
 }
 
 TemplateManager::pImpl::~pImpl() {
