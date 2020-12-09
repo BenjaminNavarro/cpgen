@@ -18,9 +18,8 @@ class __project_name__Conan(ConanFile):
 
     def requirements(self):
         if self.options.build_tests:
-            self.requires("cppcheck_installer/2.0@bincrafters/stable")
-            self.requires("catch2/2.13.0")
             # add test dependencies here if needed
+            pass
 
     def configure(self):
         if self.settings.compiler == 'Visual Studio':
