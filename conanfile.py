@@ -16,6 +16,9 @@ class CPGenConan(ConanFile):
     requires = "fmt/7.1.2", "cli11/1.9.1", "libcurl/7.73.0", "libarchive/3.4.3"
     exports_sources = "!.clangd*", "!.ccls-cache*", "!compile_commands.json", "*"
 
+    def configure(self):
+        self.options["libarchive"].with_acl = False
+
     def requirements(self):
         if self.options.build_tests:
             self.requires("cppcheck_installer/2.0@bincrafters/stable")
