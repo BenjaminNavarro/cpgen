@@ -1,0 +1,1 @@
+#include <__component_name__/__component_name__.h>
