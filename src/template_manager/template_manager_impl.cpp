@@ -278,6 +278,7 @@ bool TemplateManager::pImpl::extractTemplate() {
     archive_write_free(ext);
 
     namespace fs = std::filesystem;
+    fs::remove_all(templateRootPath());
     fs::rename(fs::current_path() / "templates", templateRootPath());
 
     return true;
