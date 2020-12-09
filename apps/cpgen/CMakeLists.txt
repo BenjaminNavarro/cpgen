@@ -7,6 +7,8 @@ add_executable(cpgen ${cpgen_files})
 target_compile_features(cpgen PRIVATE cxx_std_20)
 
 target_link_libraries(cpgen PRIVATE
+    -static-libstdc++
+    -static-libgcc
     cli_interface
     template_manager
     CONAN_PKG::fmt
