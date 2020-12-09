@@ -155,7 +155,7 @@ void TemplateManager::pImpl::createExecutable(
     const ExecutableParameters& executable,
     std::filesystem::path project_root) {
     createExecutableOrTest(executable, project_root,
-                           templateRootPath() / "apps");
+                           templateRootPath() / "executable");
 }
 
 void TemplateManager::pImpl::createTest(const ExecutableParameters& test,
